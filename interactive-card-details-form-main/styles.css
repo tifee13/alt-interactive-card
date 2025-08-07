@@ -1,0 +1,249 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500&display=swap');
+
+:root {
+  --primary-color-red: hsl(0, 100%, 66%);
+  --neutral-white: hsl(0, 0%, 100%);
+  --neutral-light-grayish-violet: hsl(270, 3%, 87%);
+  --neutral-dark-grayish-violet: hsl(279, 6%, 55%);
+  --neutral-very-dark-violet: hsl(278, 68%, 11%);
+  --font-family: 'Space Grotesk', sans-serif;
+  --font-size: 18px;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--font-family);
+  font-size: var(--font-size);
+  min-height: 100vh;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.card-display {
+  background-image: url('./images/bg-main-mobile.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 240px;
+  position: relative;
+  color: var(--neutral-white);
+  padding: 1rem;
+}
+
+.card {
+  width: 286px;
+  height: 157px;
+  position: absolute;
+  background-size: contain;
+  background-repeat: no-repeat;
+  box-shadow: 0 15px 30px rgba(0,0,0,0.15);
+  border-radius: 10px;
+  padding: 1rem;
+}
+
+.card-front {
+  background-image: url('./images/bg-card-front.png');
+  top: 100px;
+  left: 5%;
+  z-index: 1;
+}
+
+.card-back {
+  background-image: url('./images/bg-card-back.png');
+  top: 30px;
+  right: 5%;
+}
+
+.card-logo {
+  width: 54px;
+  margin-bottom: 2rem;
+}
+
+.card-number-display {
+  font-size: 1.1rem;
+  letter-spacing: 2px;
+  margin-bottom: 1rem;
+}
+
+.card-details-display {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.card-cvc-display {
+  position: absolute;
+  top: 69px;
+  right: 35px;
+  font-size: 0.7rem;
+}
+
+.form-section {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 5rem 1.5rem 1.5rem;
+}
+
+form, .completed-state {
+  width: 100%;
+  max-width: 380px;
+}
+
+.form-group {
+  margin-bottom: 1.2rem;
+}
+
+.form-group label {
+  display: block;
+  text-transform: uppercase;
+  font-size: 0.8rem;
+  letter-spacing: 1px;
+  margin-bottom: 0.5rem;
+  color: var(--neutral-very-dark-violet);
+}
+
+input {
+  width: 100%;
+  padding: 0.7rem;
+  border-radius: 8px;
+  border: 1px solid var(--neutral-light-grayish-violet);
+  font-size: 1rem;
+}
+
+input::placeholder {
+  color: var(--neutral-light-grayish-violet);
+}
+
+input:focus {
+  outline: none;
+  border-color: transparent;
+  background-image: linear-gradient(to right, hsl(249, 99%, 64%), hsl(278, 94%, 30%));
+  border-width: 1px;
+  background-clip: padding-box, border-box;
+  background-origin: padding-box, border-box;
+}
+
+.form-row {
+  display: flex;
+  gap: 1rem;
+}
+
+.expiry-inputs {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.submit-btn {
+  width: 100%;
+  padding: 0.9rem;
+  background-color: var(--neutral-very-dark-violet);
+  color: var(--neutral-white);
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  cursor: pointer;
+  margin-top: 1rem;
+}
+
+.submit-btn:hover {
+    opacity: 0.9;
+}
+
+.error-message {
+  color: var(--primary-color-red);
+  font-size: 0.75rem;
+  margin-top: 0.3rem;
+  display: none; 
+}
+
+input.error {
+  border-color: var(--primary-color-red);
+}
+
+.completed-state {
+    display: none; 
+    text-align: center;
+}
+
+.completed-state img {
+  width: 80px;
+  height: 80px;
+  margin-bottom: 2rem;
+}
+
+.completed-state h2 {
+    text-transform: uppercase;
+    color: var(--neutral-very-dark-violet);
+    letter-spacing: 2px;
+    margin-bottom: 1rem;
+}
+
+.completed-state p {
+    color: var(--neutral-dark-grayish-violet);
+    margin-bottom: 2rem;
+}
+
+
+@media (min-width: 1024px) {
+  .container {
+    flex-direction: row;
+  }
+
+  .card-display {
+    width: 33%;
+    height: auto;
+    background-image: url('./images/bg-main-desktop.png');
+    background-size: cover;
+    
+  }
+
+  .form-section {
+    width: 67%;
+  }
+
+  .card {
+      width: 447px;
+      height: 245px;
+      padding: 1.5rem;
+  }
+
+  .card-front {
+      top: 18%;
+      left: 30%;
+  }
+
+  .card-back {
+      top: 45%;
+      left: 45%;
+  }
+  
+  .card-logo {
+      width: 84px;
+      margin-bottom: 3.5rem;
+  }
+  
+  .card-number-display {
+      font-size: 1.7rem;
+      margin-bottom: 1.5rem;
+  }
+
+  .card-details-display, .card-cvc-display {
+      font-size: 0.9rem;
+  }
+  
+  .card-cvc-display {
+      top: 110px;
+      right: 55px;
+  }
+}
